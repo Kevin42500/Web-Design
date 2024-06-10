@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarCo - Online Transactions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav a {
+            margin: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .form-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f4f4f4;
+        }
+        table {
+            margin: 0 auto;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="products.html">Products</a> |
+        <a href="ads.html">Advertisements</a> |
+        <a href="transaction.html">Online Transactions</a>
+    </nav>
+    <div class="form-container">
+        <h1>Online Transaction</h1>
+        <form action="/submit" method="post">
+            <table>
+                <tr>
+                    <td><label for="name">Full Name:</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="model">Car Model:</label></td>
+                    <td>
+                        <select id="model" name="model">
+                            <option value="model-x">Model X</option>
+                            <option value="model-s">Model S</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="payment">Payment Method:</label></td>
+                    <td>
+                        <select id="payment" name="payment">
+                            <option value="credit-card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
