@@ -7,22 +7,72 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=1920'); /* Replace with your background image URL */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
         }
         nav a {
             margin: 10px;
             text-decoration: none;
-            color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        .products {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .products h1 {
+            margin-bottom: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         .product {
-            border: 1px solid #ddd;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 20px;
             margin: 20px;
             display: inline-block;
             text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            color: #fff;
         }
         .product img {
-            width: 200px;
-            height: 150px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .product h2 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+        .product p {
+            color: #ddd;
+        }
+        .product:hover {
+            transform: scale(1.05);
+        }
+        .product-details {
+            text-align: left;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -39,11 +89,61 @@
             <img src="https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Car Model 1">
             <h2>Model X</h2>
             <p>High performance sports car</p>
+            <div class="product-details">
+                <p><strong>Price:</strong> $80,000</p>
+                <p><strong>Mileage:</strong> 5,000 miles</p>
+                <p><strong>Features:</strong> V8 Engine, 450 HP, Leather Seats</p>
+            </div>
         </div>
         <div class="product">
             <img src="https://images.pexels.com/photos/244212/pexels-photo-244212.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Car Model 2">
             <h2>Model S</h2>
             <p>Luxury sedan with premium features</p>
+            <div class="product-details">
+                <p><strong>Price:</strong> $75,000</p>
+                <p><strong>Mileage:</strong> 7,000 miles</p>
+                <p><strong>Features:</strong> Sunroof, Heated Seats, Advanced Safety</p>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://images.pexels.com/photos/10549262/pexels-photo-10549262.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Car Model 3">
+            <h2>Model Z</h2>
+            <p>Electric car with cutting-edge technology</p>
+            <div class="product-details">
+                <p><strong>Price:</strong> $90,000</p>
+                <p><strong>Mileage:</strong> 3,000 miles</p>
+                <p><strong>Features:</strong> Autopilot, 300-mile Range, Wireless Charging</p>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://images.pexels.com/photos/1429775/pexels-photo-1429775.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Car Model 4">
+            <h2>Model Y</h2>
+            <p>Compact SUV with versatile features</p>
+            <div class="product-details">
+                <p><strong>Price:</strong> $65,000</p>
+                <p><strong>Mileage:</strong> 8,000 miles</p>
+                <p><strong>Features:</strong> AWD, Panoramic Roof, 7-Seater</p>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://images.pexels.com/photos/1149831/pexels-photo-1149831.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Car Model 5">
+            <h2>Model A</h2>
+            <p>Affordable city car</p>
+            <div class="product-details">
+                <p><strong>Price:</strong> $30,000</p>
+                <p><strong>Mileage:</strong> 10,000 miles</p>
+                <p><strong>Features:</strong> Fuel Efficient, Compact Design, Easy Parking</p>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://images.pexels.com/photos/16789398/pexels-photo-16789398/free-photo-of-black-toyota-noah-driving-down-the-street-in-tokyo.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Car Model 6">
+            <h2>Model B</h2>
+            <p>Family van with spacious interior</p>
+            <div class="product-details">
+                <p><strong>Price:</strong> $40,000</p>
+                <p><strong>Mileage:</strong> 12,000 miles</p>
+                <p><strong>Features:</strong> 8-Seater, Rear-Seat Entertainment, Safety Assist</p>
+            </div>
         </div>
     </div>
 </body>

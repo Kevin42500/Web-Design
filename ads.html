@@ -7,21 +7,67 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.pexels.com/photos/1402787/pexels-photo-1402787.jpeg?auto=compress&cs=tinysrgb&w=1920'); /* Replace with your background image URL */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
         }
         nav a {
             margin: 10px;
             text-decoration: none;
-            color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
         }
         .ads {
-            padding: 20px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .ads h1 {
+            margin-bottom: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         .ad {
-            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            margin: 20px auto;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .ad h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .ad p {
+            color: #ddd;
         }
         marquee {
-            color: red;
-            font-size: 20px;
+            color: yellow;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 30px;
         }
     </style>
 </head>
@@ -42,6 +88,14 @@
         <div class="ad">
             <h2>New Arrivals!</h2>
             <p>Check out the latest models in our showroom, featuring advanced technology and superior performance.</p>
+        </div>
+        <div class="ad">
+            <h2>Extended Warranty Offer!</h2>
+            <p>Purchase any vehicle now and get an extended warranty of up to 5 years at no additional cost.</p>
+        </div>
+        <div class="ad">
+            <h2>Zero Down Payment!</h2>
+            <p>Take advantage of our zero down payment offer on selected models. Limited time offer!</p>
         </div>
     </div>
 </body>
