@@ -9,17 +9,16 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: url('https://images.pexels.com/photos/1144176/pexels-photo-1144176.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center fixed;
+            background: url('https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center fixed;
             background-size: cover;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #fff;
         }
         nav {
-            background-color: rgba(0, 123, 255, 0.9);
-            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         nav a {
             margin: 10px;
@@ -27,10 +26,10 @@
             color: #fff;
             padding: 10px 15px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
         }
         nav a:hover {
-            background-color: #0056b3;
+            background-color: rgba(255, 255, 255, 0.4);
         }
         .form-container {
             display: flex;
@@ -41,17 +40,22 @@
             backdrop-filter: blur(8px);
         }
         form {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 500px;
+            color: #fff;
         }
         h1 {
             text-align: center;
-            color: #007BFF;
+            color: #fff;
             margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
         label {
             display: block;
@@ -65,10 +69,13 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             transition: border-color 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
         }
         input:focus, select:focus {
             border-color: #007BFF;
             outline: none;
+            background-color: rgba(255, 255, 255, 0.4);
         }
         input[type="submit"] {
             background-color: #007BFF;
@@ -90,7 +97,6 @@
         <a href="transaction.html">Online Transactions</a>
     </nav>
     <div class="form-container">
-        
         <form action="/submit" method="post">
             <h1>Online Transaction</h1>
             <label for="name">Full Name:</label>
@@ -115,7 +121,6 @@
             </select>
 
             <input type="submit" value="Submit">
-
         </form>
     </div>
 </body>
