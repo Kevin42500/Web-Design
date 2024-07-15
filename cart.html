@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=1920'); /* Replace with your background image URL */
+            background-image: url('https://images.pexels.com/photos/2486168/pexels-photo-2486168.jpeg?auto=compress&cs=tinysrgb&w=1920');
             background-size: cover;
             background-attachment: fixed;
             color: #fff;
@@ -42,43 +42,34 @@
             padding: 10px 20px;
             border-radius: 10px;
         }
-        .cart-item {
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            margin: 20px;
-            display: inline-block;
+        table {
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
             text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        th {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        td {
             background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            width: 250px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            color: #fff;
-        }
-        .cart-item h2 {
-            margin: 10px 0;
-            font-size: 1.5em;
-        }
-        .cart-item p {
             color: #ddd;
-        }
-        .cart-item:hover {
-            transform: scale(1.05);
-        }
-        .cart-details {
-            text-align: left;
-            margin-top: 10px;
         }
         .remove-from-cart {
             background-color: #f44336;
             border: none;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 12px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 16px;
-            margin: 10px 2px;
+            font-size: 14px;
+            margin: 5px;
             cursor: pointer;
             border-radius: 5px;
         }
@@ -86,25 +77,31 @@
     <script>
         function loadCart() {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartContainer = document.getElementById('cart-items');
-            cartContainer.innerHTML = '';
+            let cartTable = document.getElementById('cart-table');
+            cartTable.innerHTML = '';
 
             if (cart.length === 0) {
-                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                cartTable.innerHTML = '<tr><td colspan="3">Your cart is empty.</td></tr>';
                 return;
             }
 
             cart.forEach((item, index) => {
-                let cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <h2>${item.productName}</h2>
-                    <div class="cart-details">
-                        <p><strong>Price:</strong> $${item.price}</p>
-                        <button class="remove-from-cart" onclick="removeFromCart(${index})">Remove</button>
-                    </div>
-                `;
-                cartContainer.appendChild(cartItem);
+                let row = cartTable.insertRow();
+                let productNameCell = row.insertCell(0);
+                let priceCell = row.insertCell(1);
+                let actionCell = row.insertCell(2);
+
+                productNameCell.textContent = item.productName;
+                priceCell.textContent = '$' + item.price.toFixed(2);
+
+                let removeButton = document.createElement('button');
+                removeButton.textContent = 'Remove';
+                removeButton.className = 'remove-from-cart';
+                removeButton.onclick = function() {
+                    removeFromCart(index);
+                };
+
+                actionCell.appendChild(removeButton);
             });
         }
 
@@ -130,8 +127,17 @@
     </nav>
     <div class="cart">
         <h1>Your Cart</h1>
-        <div id="cart-items">
-        </div>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

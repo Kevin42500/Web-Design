@@ -168,13 +168,13 @@
                 </tr>
             </thead>
             <tbody id="cart-items">
-                
+                <!-- Cart items will be dynamically added here -->
             </tbody>
         </table>
     </div>
 
     <script>
-        
+        // Function to load items from localStorage and display in cart table
         function loadCart() {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             let cartTable = document.getElementById('cart-items');
@@ -195,7 +195,7 @@
             });
         }
 
-        
+        // Call loadCart when the page loads
         window.onload = loadCart;
     </script>
 </body>
