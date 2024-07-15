@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarCo - Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -74,14 +75,36 @@
             text-align: left;
             margin-top: 10px;
         }
+        .add-to-cart {
+            background-color: #ff9800;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
+    <script>
+        function addToCart(productName, price) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ productName, price });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${productName} has been added to your cart!`);
+        }
+    </script>
 </head>
 <body>
     <nav>
         <a href="index.html">Home</a> |
         <a href="products.html">Products</a> |
         <a href="ads.html">Advertisements</a> |
-        <a href="transaction.html">Online Transactions</a>
+        <a href="transaction.html">Online Transactions</a> |
+        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a> |
         <a href="about us.html">About Us</a> |
     </nav>
     <div class="products">
@@ -94,6 +117,7 @@
                 <p><strong>Price:</strong> $80,000</p>
                 <p><strong>Mileage:</strong> 5,000 miles</p>
                 <p><strong>Features:</strong> V8 Engine, 450 HP, Leather Seats</p>
+                <button class="add-to-cart" onclick="addToCart('Corvette', 80000)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -104,6 +128,7 @@
                 <p><strong>Price:</strong> $75,000</p>
                 <p><strong>Mileage:</strong> 7,000 miles</p>
                 <p><strong>Features:</strong> Sunroof, Heated Seats, Advanced Safety</p>
+                <button class="add-to-cart" onclick="addToCart('Audi A5', 75000)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -114,6 +139,7 @@
                 <p><strong>Price:</strong> $90,000</p>
                 <p><strong>Mileage:</strong> 3,000 miles</p>
                 <p><strong>Features:</strong> Autopilot, 300-mile Range, Wireless Charging</p>
+                <button class="add-to-cart" onclick="addToCart('Tesla', 90000)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -124,6 +150,7 @@
                 <p><strong>Price:</strong> $65,000</p>
                 <p><strong>Mileage:</strong> 8,000 miles</p>
                 <p><strong>Features:</strong> AWD, Panoramic Roof, 7-Seater</p>
+                <button class="add-to-cart" onclick="addToCart('Mercedes G63', 65000)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -134,6 +161,7 @@
                 <p><strong>Price:</strong> $30,000</p>
                 <p><strong>Mileage:</strong> 10,000 miles</p>
                 <p><strong>Features:</strong> Fuel Efficient, Compact Design, Easy Parking</p>
+                <button class="add-to-cart" onclick="addToCart('Audi TTRS', 30000)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -141,9 +169,10 @@
             <h2>Toyota Voxy</h2>
             <p>Family van with spacious interior</p>
             <div class="product-details">
-                <p><strong>Price:</strong> $40,000</p>
+                <p><strong>Price:</strong> $30,000</p>
                 <p><strong>Mileage:</strong> 12,000 miles</p>
                 <p><strong>Features:</strong> 8-Seater, Rear-Seat Entertainment, Safety Assist</p>
+                <button class="add-to-cart" onclick="addToCart('Toyota Voxy', 30000)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -154,6 +183,7 @@
                 <p><strong>Price:</strong> $43,500</p>
                 <p><strong>Mileage:</strong> 3,000 miles</p>
                 <p><strong>Features:</strong> Cruise-control, 300-mile Range, Wireless Charging</p>
+                <button class="add-to-cart" onclick="addToCart('Tiguan', 43500)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -164,6 +194,7 @@
                 <p><strong>Price:</strong> $42,380</p>
                 <p><strong>Mileage:</strong> 3,000 miles</p>
                 <p><strong>Features:</strong> Turbo-charged 2 cylinder, 300-mile Range, Wireless Charging</p>
+                <button class="add-to-cart" onclick="addToCart('Golf GTI', 42380)">Add to Cart</button>
             </div>
         </div>
         <div class="product">
@@ -174,6 +205,7 @@
                 <p><strong>Price:</strong> $115,000</p>
                 <p><strong>Mileage:</strong> 3,000 miles</p>
                 <p><strong>Features:</strong> Cruise-control, 300-mile Range, Wireless Charging</p>
+                <button class="add-to-cart" onclick="addToCart('Range Rover', 115000)">Add to Cart</button>
             </div>
         </div>
     </div>
