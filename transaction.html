@@ -114,6 +114,12 @@
         .cart td {
             background-color: rgba(0, 0, 0, 0.4);
         }
+        .success-message {
+            text-align: center;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -126,7 +132,7 @@
         <a href="about us.html">About Us</a> |
     </nav>
     <div class="form-container">
-        <form action="/submit" method="post">
+        <form id="transaction-form">
             <h1>Online Transaction</h1>
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
@@ -156,6 +162,7 @@
 
             <input type="submit" value="Submit">
         </form>
+        <div id="success-message" class="success-message" style="display:none;">Form has been submitted successfully!</div>
     </div>
 
     <div class="cart">
@@ -174,6 +181,15 @@
     </div>
 
     <script>
+        document.getElementById('transaction-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Display the success message
+            document.getElementById('success-message').style.display = 'block';
+            
+            // Clear the form fields
+            event.target.reset();
+        });
 
         function loadCart() {
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -196,7 +212,7 @@
         }
 
         window.onload = loadCart;
-
+        
     </script>
 </body>
 </html>
